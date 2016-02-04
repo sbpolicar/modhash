@@ -1,0 +1,133 @@
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Titillium Web', sans-serif;
+    overflow-x: hidden;
+
+    /*background-color: black;*/
+}
+
+p, ul {
+    padding: 0;
+    margin: 0;
+}
+
+/* Begin Nav/Layout.ejs Styling*/
+.nav {
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    background-color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-bottom: solid black 0.3px;
+    display: block;
+    margin: 0;
+    /*box-shadow: 0 0 50px 0 rgba(0,0,0,0.2);*/
+}
+
+.nav-content {
+    padding: 20px;
+    height: auto;
+}
+
+.nav-title {
+    text-align: left;
+}
+
+.title-bracket {
+    color: rgba(161,255,0,1);
+    text-shadow:
+    -.5px -.5px 0 #000,
+    .5px -.5px 0 #000,
+    -.5px .5px 0 #000,
+    .5px .5px 0 #000;
+}
+
+.nav-title > p {
+    display: inline-block;
+}
+
+.nav-links {
+    text-align: right;
+    margin-top: -50px;
+}
+
+.nav-links > span > a > i {
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    color: rgba(161,255,0,1);
+    text-shadow:
+    -.5px -.5px 0 #000,
+    .5px -.5px 0 #000,
+    -.5px .5px 0 #000,
+    .5px .5px 0 #000;
+}
+
+.nav-links > span > a > i:hover {
+    color: rgba(255,161,0,1);
+    text-shadow: 0 0 10px white;
+}
+
+.side-nav {
+    background-color: white;
+    font-size: 2em;
+    padding: 10px;
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 88px;
+    border-left: solid black 0.3px;
+    /*box-shadow: 0 0 50px 0 rgba(0,0,0,0.2);*/
+    animation: fadeInRight .3s;
+    /*background-color: black;*/
+    list-style-type: none;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+ul.side-nav > li {
+    animation: fadeInRight .5s;
+}
+
+ul.ng-hide {
+    animation: fadeOutRight .3s;
+}
+
+.nav-switch {
+    color: white !important;
+    background-color: black !important;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: rgba(161,255,0,1);
+    text-shadow:
+    -.5px -.5px 0 #000,
+    .5px -.5px 0 #000,
+    -.5px .5px 0 #000,
+    .5px .5px 0 #000;
+}
+/* End Nav/Layout Styling */
+
+.view-container {
+    padding: 20px;
+}

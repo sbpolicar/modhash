@@ -1,0 +1,34 @@
+{
+  "name": "modhash",
+  "version": "1.0.0",
+  "description": "Gaming and Tech Blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sbpolicar/modhash.git"
+  },
+  "keywords": [
+    "Tech",
+    "Mod",
+    "Video",
+    "Games"
+  ],
+  "author": "sbpolicar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sbpolicar/modhash/issues"
+  },
+  "homepage": "https://github.com/sbpolicar/modhash#readme",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "express-ejs-layouts": "^2.0.0",
+    "pg": "^4.4.4",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.19.1"
+  }
+}
