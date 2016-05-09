@@ -119,14 +119,19 @@ modhashApp.controller('MainCtrl', ['$scope', '$http', '$timeout', '$sce', functi
     }
 
     $scope.deleteItem = function(index) {
-        window.location.reload();
+        console.log(index)
         $scope.document.splice(index, 1);
+        // window.location.reload();
     }
 
     window.onbeforeunload = function() {
         if($scope.document.length >= 1) {
             window.sessionStorage.myDocument = JSON.stringify($scope.document);
         }
+    };
+
+    window.onunload = function() {
+        window.scrollTo(0,0);
     };
 }])
 .directive('bindTo', function($compile) {

@@ -12,9 +12,9 @@
             </span>
         </h1>
         <br><br><br>
-        <div class="post-model-repeat" ng-repeat="each in document track by $index">
+        <div class="post-model-repeat" ng-repeat="each in document">
             <hr ng-if="!$first">
-            <b>{{document[$index].type}}:<span ng-click="deleteItem($index)" class="post-add-input-button fa fa-minus-square"></span></b><br>
+            <b>{{document[$index].type}}:<span ng-click="deleteItem($index)" class="post-delete-input-button fa fa-2x fa-minus-square"></span></b><br>
             <span bind-to="document[$index].markup.wrap"></span>
         </div>
     </div>
@@ -24,7 +24,7 @@
 <div class="post-preview-wrapper">
     <h1 class="preview-title">Preview</h1>
     <div id="preview" class="post-preview">
-        <div ng-repeat="each in document track by $index">
+        <div ng-repeat="each in document">
             <span bind-to="document[$index].markup.display"></span>
         </div>
     </div>

@@ -192,10 +192,6 @@ a:hover {
     text-align: center;
 }
 
-.home-title-container {
-
-}
-
 .home-title {
     font-size: 500%;
     margin: 0;
@@ -282,7 +278,9 @@ a:hover {
     margin: 0;
     padding: 0;
 }
-
+.post-model-repeat {
+    margin: 0 auto;
+}
 .post-add-input-button {
     margin-top: 10px;
     float: right;
@@ -295,6 +293,25 @@ a:hover {
     -webkit-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
+    cursor: pointer;
+
+}
+.post-delete-input-button {
+    cursor: pointer;
+    margin-top: 10px;
+    float: right;
+    color: rgba(255,80,0,1);
+    text-shadow:
+    -.5px -.5px 0 #000,
+    .5px -.5px 0 #000,
+    -.5px .5px 0 #000,
+    .5px .5px 0 #000;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+.post-add-input-button:hover {
+    /*color: white;*/
 }
 
 .post-model-title {
@@ -316,8 +333,11 @@ a:hover {
     font-size: 1.5vw
 }
 .input-select > li:hover {
-    color: white;
+    color: rgba(255,161,0,1);
     cursor: pointer;
+}
+.shaded {
+    background-color:rgba(150,150,150,0.2.5);
 }
 /* end Post stying */
 
