@@ -1,3 +1,4 @@
+
 html {
     margin: 0;
     padding: 0;
@@ -11,16 +12,47 @@ body {
     width: 100vw;
     height: 100vh;
     font-family: 'Titillium Web', sans-serif;
+    font-weight: 300;
     overflow-x: hidden;
-
-    /*background-color: black;*/
 }
 
 p, ul {
     padding: 0;
     margin: 0;
+    font-family: 'Titillium Web', sans-serif;
 }
 
+/* input styling */
+
+input, textarea {
+    font-size: 20px;
+    border: solid rgba(150,150,150,0.25) 0.5px;
+    border-radius: 5px;
+    width: 80%;
+    margin: 15px;
+    margin-top: 5px;
+}
+
+input:focus, textarea:focus, input:hover, textarea:hover {
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    padding: 5px;
+    box-shadow: 10px 10px 25px rgba(0,0,0,0.45);
+    border: solid rgba(0,0,0,0.3) 1px;
+    border-radius: 0;
+}
+
+textarea {
+    height: 250px;
+}
+h3 {
+    font-size: 120%;
+}
+.my-face {
+    border-radius: 50%;
+}
+/* end input styling */
 /* Begin Nav/Layout.ejs Styling*/
 .nav {
     -webkit-transition: .5s;
@@ -53,6 +85,10 @@ p, ul {
     .5px -.5px 0 #000,
     -.5px .5px 0 #000,
     .5px .5px 0 #000;
+}
+
+.title-hash {
+    color: rgba(255,161,0,1);
 }
 
 .nav-title > p {
@@ -126,8 +162,164 @@ a:hover {
     -.5px .5px 0 #000,
     .5px .5px 0 #000;
 }
+
+.footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    background-color: black;
+    width: 100%;
+    border-bottom: solid black 0.3px;
+    display: block;
+    margin: 0;
+    color: white;
+}
+.footer-info {
+    text-align: center;
+}
 /* End Nav/Layout Styling */
 
 .view-container {
+    height: 120vh;
     padding: 20px;
 }
+
+/* Home view styling*/
+.home-container {
+    text-align: center;
+}
+
+.home-title-container {
+
+}
+
+.home-title {
+    font-size: 500%;
+    margin: 0;
+}
+
+.home-title-logo {
+    border-radius: 1.5pc;
+    display: inline;
+    background-color: black;
+    color: white;
+    -webkit-transition: .7s;
+    -o-transition: .7s;
+    transition: .7s;
+}
+.home-title-logo:hover {
+    border-radius: 0;
+    display: inline;
+    background-color: white;
+    color: black !important;
+}
+.home-title:hover * {
+    color: black !important;
+}
+
+.home-question {
+    animation: bounceInDown .7s;
+    cursor: pointer;
+}
+.home-question:hover, .question-focused {
+     -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    padding: 5px;
+    box-shadow: 10px 10px 25px rgba(0,0,0,0.45);
+    border: solid rgba(0,0,0,0.3) 1px;
+    border-radius: 0;
+}
+.home-answer {
+    animation: fadeInUp .5s;
+}
+/* end home styling */
+
+/* Post stying */
+
+.post {
+    display: inline-block;
+    width: 49%;
+    margin: 0;
+}
+
+.post-model {
+    float: right;
+    /*width: 49%;*/
+}
+.post-model-wrapper {
+    /*margin: 0 auto;*/
+    width: 82%;
+}
+.post-preview-wrapper {
+    position: fixed;
+    width: 49%;
+    overflow: hidden;
+    content:"";
+  display:block;
+  clear:both;
+}
+.post-preview {
+    float: left;
+    word-wrap: break-word;
+    overflow: auto;
+    border: inset rgba(150,150,150,0.1) 0.5px;
+    height: 81vh;
+    width: 99%;
+}
+.preview-title {
+    border-bottom: solid rgba(150,150,150,0.5) 1px;
+    margin-top: 0;
+}
+.post-input {
+    display: block;
+}
+
+.post-model > h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.post-add-input-button {
+    margin-top: 10px;
+    float: right;
+    color: rgba(161,255,0,1);
+    text-shadow:
+    -.5px -.5px 0 #000,
+    .5px -.5px 0 #000,
+    -.5px .5px 0 #000,
+    .5px .5px 0 #000;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+.post-model-title {
+    background-color: white;
+    position: fixed;
+    margin: 0;
+    margin-bottom: 10px;
+    border-bottom: solid rgba(150,150,150,0.5) 1px;
+    width: 42%;
+}
+.input-select {
+    position: absolute;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+}
+.input-select > li {
+    list-style-type: none;
+    font-size: 1.5vw
+}
+.input-select > li:hover {
+    color: white;
+    cursor: pointer;
+}
+/* end Post stying */
+
+
+

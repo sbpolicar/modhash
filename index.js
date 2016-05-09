@@ -9,7 +9,11 @@ app.use(ejsLayouts);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 
-app.get('/*', function(req, res) {
+app.get('/reserved', function(req, res) {
+    res.send('this route is reserved for the server')
+})
+
+app.get('*', function(req, res) {
     res.render('main/index');
 });
 

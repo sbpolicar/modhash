@@ -1,2 +1,27 @@
-<h1>This is the angular fed page</h1>
-<a href="/post">Post</a>
+<br>
+<div class="home-container">
+    <div class="home-title-container">
+        <h1 ng-mouseenter="titleToggle=true;" ng-class="{'title-toggle':titleToggle===true}" class="home-title">Welcome to <p ng-class="{'title-toggle':titleToggle===true}" class="home-title-logo"><span ng-class="{'title-toggle':titleToggle===true}" class="title-bracket">{</span> mod:<span ng-class="{'title-toggle':titleToggle===true}" class="title-hash">doc</span> <span ng-class="{'title-toggle':titleToggle===true}" class="title-bracket">}</span></p></h1>
+        <hr>
+    <div>
+
+    <h1 ng-click="whatIsToggle=true" ng-class="{'question-focused': whatIsToggle}" class="home-question">What is <span><span ng-class="{'title-bracket':navSwitch===true}">{</span> mod:<span ng-class="{'title-hash':navSwitch===true}">doc</span> <span ng-class="{'title-bracket':navSwitch===true}">}</span>?&nbsp;<i class="fa fa-caret-down"></i></span></h1>
+    <br>
+    <div class="home-answer" ng-show="whatIsToggle===true">
+        <h1>
+            A modular HTML document builder, made possible by
+            <br>
+            <br>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/AngularJS-large.png">
+            <br>
+
+            <br>
+            Built by me:
+            <br>
+            <br>
+            <img width="150px" class="my-face" src="https://media.licdn.com/media/AAEAAQAAAAAAAAJCAAAAJDM1NjRkYWE1LWJhYTItNDcyNS1hYTc0LTgyYTc0NjBiM2M3Yg.jpg">
+            <br>
+            Samuel Policar
+        </h1>
+    </div>
+</div>

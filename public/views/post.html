@@ -1,1 +1,31 @@
-<h1>This is the post page</h1>
+<div class="post post-model">
+    <div class="post-model-wrapper">
+        <h1 class="post-model-title">Build your document
+            <span ng-click="selectInputType()" ng-class="{'fa-minus-square': toggleSelectInput, 'fa-plus-square': !toggleSelectInput}" class="post-add-input-button fa">
+                <ul ng-if="toggleSelectInput" class="input-select">
+                    <li ng-click="addInput('title')">Title</li>
+                    <li ng-click="addInput('subtitle')">Subtitle</li>
+                    <li ng-click="addInput('link')">Link</li>
+                    <li ng-click="addInput('image')">Image</li>
+                    <li ng-click="addInput('paragraph')">Paragraph</li>
+                </ul>
+            </span>
+        </h1>
+        <br><br><br>
+        <div class="post-model-repeat" ng-repeat="each in document track by $index">
+            <hr ng-if="!$first">
+            <b>{{document[$index].type}}:<span ng-click="deleteItem($index)" class="post-add-input-button fa fa-minus-square"></span></b><br>
+            <span bind-to="document[$index].markup.wrap"></span>
+        </div>
+    </div>
+
+</div>
+
+<div class="post-preview-wrapper">
+    <h1 class="preview-title">Preview</h1>
+    <div id="preview" class="post-preview">
+        <div ng-repeat="each in document track by $index">
+            <span bind-to="document[$index].markup.display"></span>
+        </div>
+    </div>
+</div>
