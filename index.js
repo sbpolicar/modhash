@@ -17,6 +17,13 @@ app.get('*', function(req, res) {
     res.render('main/index');
 });
 
+app.post("/save", function(req, res){
+    if(!req.body) {
+        res.redirect('/')
+    } else {
+        console.log(req.body);
+    }
+})
 
 app.listen(3000, function() {
   console.log('Server has started');

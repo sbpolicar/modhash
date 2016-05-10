@@ -16,7 +16,7 @@ body {
     overflow-x: hidden;
 }
 
-p, ul {
+p, ul, t {
     padding: 0;
     margin: 0;
     font-family: 'Titillium Web', sans-serif;
@@ -38,7 +38,7 @@ input:focus, textarea:focus, input:hover, textarea:hover {
     -o-transition: .5s;
     transition: .5s;
     padding: 5px;
-    box-shadow: 10px 10px 25px rgba(0,0,0,0.45);
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.45);
     border: solid rgba(0,0,0,0.3) 1px;
     border-radius: 0;
 }
@@ -128,19 +128,26 @@ h3 {
     top: 88px;
     border-left: solid black 0.3px;
     /*box-shadow: 0 0 50px 0 rgba(0,0,0,0.2);*/
-    animation: fadeInRight .3s;
     /*background-color: black;*/
     list-style-type: none;
-    -webkit-transition: .5s;
-    -o-transition: .5s;
-    transition: .5s;
+    z-index: 1;
+    color: white;
 }
-
+.side-nav.ng-enter {
+    animation: fadeInRight .3s;
+}
 ul.side-nav > li {
     animation: fadeInRight .5s;
 }
-
-ul.ng-hide {
+ul.side-nav > li > a {
+    color: white;
+    text-decoration: none;
+}
+ul.side-nav > li > a:hover {
+    color: rgba(255,161,0,1);
+    text-decoration: none;
+}
+ul.ng-leave {
     animation: fadeOutRight .3s;
 }
 
@@ -149,36 +156,26 @@ ul.ng-hide {
     background-color: black !important;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-a:hover {
-    color: rgba(161,255,0,1);
+.flash {
+    animation:fadeIn .5s;
+    font-size: 1.5vw;
     text-shadow:
     -.5px -.5px 0 #000,
     .5px -.5px 0 #000,
     -.5px .5px 0 #000,
     .5px .5px 0 #000;
-}
-
-.footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    -webkit-transition: .5s;
-    -o-transition: .5s;
-    transition: .5s;
-    background-color: black;
+    /*transition: 1s;*/
+    text-align: center;
+    background-color: rgba(255,80,0,1);
     width: 100%;
-    border-bottom: solid black 0.3px;
-    display: block;
-    margin: 0;
+    border-radius: 0 0 50px 50px;
     color: white;
 }
-.footer-info {
-    text-align: center;
+.flash.ng-enter {
+    animation:fadeIn .5s;
+}
+.flash.ng-leave {
+    animation:fadeOut .5s;
 }
 /* End Nav/Layout Styling */
 
@@ -220,7 +217,7 @@ a:hover {
     animation: bounceInDown .7s;
     cursor: pointer;
 }
-.home-question:hover, .question-focused {
+.question-focused {
      -webkit-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
@@ -244,8 +241,10 @@ a:hover {
 
 .post-model {
     float: right;
+    padding-bottom: 20px;
     /*width: 49%;*/
 }
+
 .post-model-wrapper {
     /*margin: 0 auto;*/
     width: 82%;
@@ -255,20 +254,26 @@ a:hover {
     width: 49%;
     overflow: hidden;
     content:"";
-  display:block;
-  clear:both;
+    display:block;
+    clear:both;
 }
 .post-preview {
+    margin: 0 auto;
+    padding: 10px;
     float: left;
     word-wrap: break-word;
     overflow: auto;
     border: inset rgba(150,150,150,0.1) 0.5px;
-    height: 81vh;
-    width: 99%;
+    max-height: 76vh;
+    height: 100%;
+    width: 94%;
 }
 .preview-title {
     border-bottom: solid rgba(150,150,150,0.5) 1px;
     margin-top: 0;
+}
+.preview-title-margin {
+    margin: 1px;
 }
 .post-input {
     display: block;
@@ -281,8 +286,15 @@ a:hover {
 .post-model-repeat {
     margin: 0 auto;
 }
+.post-model-repeat.ng-enter {
+    animation: fadeInUp .5s;
+}
+.post-model-repeat.ng-leave {
+    animation: fadeOut .5s;
+}
 .post-add-input-button {
-    margin-top: 10px;
+    z-index: 1;
+    /*margin-top: 10px;*/
     float: right;
     color: rgba(161,255,0,1);
     text-shadow:
@@ -310,9 +322,6 @@ a:hover {
     -o-transition: .5s;
     transition: .5s;
 }
-.post-add-input-button:hover {
-    /*color: white;*/
-}
 
 .post-model-title {
     background-color: white;
@@ -323,10 +332,19 @@ a:hover {
     width: 42%;
 }
 .input-select {
+    font-size: 1.8vw;
     position: absolute;
     background-color: black;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 20px;
+    width: 50%;
+    box-shadow: 10px 10px 25px rgba(0,0,0,0.45);
+}
+.input-select.ng-enter {
+    animation: fadeInRight .5s;
+}
+.input-select.ng-leave {
+    animation: fadeOutRight .5s;
 }
 .input-select > li {
     list-style-type: none;
@@ -336,10 +354,77 @@ a:hover {
     color: rgba(255,161,0,1);
     cursor: pointer;
 }
-.shaded {
-    background-color:rgba(150,150,150,0.2.5);
+.input-select > li:nth-child(-n+7):hover:before{
+    content:"+ ";
+    color: white;
+}
+.input-select > li:nth-child(10):hover:before{
+    font-family: FontAwesome;
+    content:"\f0c7 \ ";
+    color: white;
+}
+.input-select > li:nth-child(11):hover:before{
+    font-family: FontAwesome;
+    content:"\f12d \ ";
+    color: white;
+}
+.input-select > li:nth-child(12):hover:before{
+    font-family: FontAwesome;
+    content:"\f1f8 \ ";
+    color: white;
+}
+
+
+.input-select > label {
+    font-size: 1.8vw;
+    color: white;
+}
+.center {
+    text-align: center;
+    margin: 0 auto;
+}
+button {
+    transition: .5s;
+    background-color: white;
+    font-family: 'Titillium Web', sans-serif;
+    color: black;
+    border: none;
+    outline: none;
+}
+.save-button {
+    background-color: black;
+    color: rgba(255,161,0,1);
+    border-radius: 25%;
+    padding: 8px;
+    position: static;
+
+}
+.save-button:hover {
+    color: rgba(161,255,0,1);
+}
+.alignment {
+    transition: .8s;
+    border-radius: 25px;
+    background-color: black;
+    color: rgba(161,255,0,1);
+}
+.preview-item {
+ padding: 0;
+ margin: 0;
+ width: auto;
+}
+pre.preview-item.paragraph {
+    /*word-wrap: break-word;*/
+    /*word-break: break-all;*/
+    white-space: pre-wrap;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 300;
+    width: 88%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.doc-name {
+    color: rgba(150,150,150,0.75);
 }
 /* end Post stying */
-
-
-
