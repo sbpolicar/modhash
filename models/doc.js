@@ -1,9 +1,9 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var doc = sequelize.define('doc', {
-    name: DataTypes.STRING,
-    asJson: DataTypes.TEXT,
-    asHtml: DataTypes.TEXT
+    documentName: DataTypes.STRING,
+    documentArray: DataTypes.TEXT,
+    documentSecret: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {

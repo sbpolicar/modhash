@@ -1,6 +1,7 @@
 var express = require('express');
 var ejsLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
+var db = require('./models');
 
 var app = express();
 
@@ -13,18 +14,37 @@ app.get('/reserved', function(req, res) {
     res.send('this route is reserved for the server')
 })
 
-app.get('*', function(req, res) {
-    res.render('main/index');
+app.get('/show/:secret', function(req, res) {
+
 });
 
 app.post("/save", function(req, res){
     if(!req.body) {
-        res.redirect('/')
+        res.send.status(403);
     } else {
-        console.log(req.body);
+        console.log('body ', req.body)
+        console.log(req.body)
+        db.doc.findOrCreate({
+            where: {
+                documentSecret: req.body.documentSecret
+            },
+            defaults: {
+                documentName  : req.body.documentName,
+                documentArray : req.body.documentArray,
+                documentSecret: req.body.documentSecret
+            }
+        }).spread(function(doc, created){
+            console.log('doc : ----------', doc);
+            console.log('created : ----------', created);
+            res.sendStatus(200);
+        })
     }
 })
 
-app.listen(3000, function() {
+app.get('*', function(req, res) {
+    res.render('main/index');
+});
+
+app.listen(3000, '0.0.0.0', function() {
   console.log('Server has started');
 });

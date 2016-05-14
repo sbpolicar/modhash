@@ -8,14 +8,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      documentName: {
         type: Sequelize.STRING
       },
-      asJson: {
+      documentArray: {
         type: Sequelize.TEXT
       },
-      asHtml: {
-        type: Sequelize.TEXT
+      documentSecret: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

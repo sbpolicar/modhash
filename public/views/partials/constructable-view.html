@@ -1,0 +1,5 @@
+<div id="preview" class="post-preview">
+    <div ng-repeat="each in document track by each.id">
+        <span bind-to="document[$index].markup.display"></span>
+    </div>
+</div>

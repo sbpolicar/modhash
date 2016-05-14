@@ -2,9 +2,8 @@
     {{message}}
 </div>
 <div class="post post-model">
-    <div class="post-model-wrapper">
         <h1 class="post-model-title">Build your document
-            <span class="post-add-input-button"><i ng-click="selectInputType(true)" ng-if="!toggleSelectInput" class="fa fa-plus-circle"></i><i ng-click="selectInputType(false)" ng-if="toggleSelectInput" class="fa fa-minus-circle"></i>&nbsp;
+            <span class="post-add-input-button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i ng-click="selectInputType(true)" ng-if="!toggleSelectInput" class="fa fa-bars"></i><i ng-click="selectInputType(false)" ng-if="toggleSelectInput" class="fa fa-times close"></i>&nbsp;
                 <ul class="input-select" ng-if="toggleSelectInput">
                 { <label class="add-input-label">Add</label> }
                     <li ng-click="addInput('title')">Title</li>
@@ -21,25 +20,23 @@
                 </ul>
             </span>
         </h1>
+    <div class="post-model-wrapper">
+        <div class="post-model-prerepeat">
         <br><br><br>
-        <b>Document Name:</b><br>
-        <input type="text" ng-model="name.documentTitle"></input>
-        <div class="post-model-repeat" ng-repeat="each in document track by each.id">
-            <hr ng-if="!$first">
-            <b>{{document[$index].type}}:<span ng-click="deleteItem($index)" class="post-delete-input-button fa fa-2x fa-minus-square"></span></b><br>
-            <span bind-to="document[$index].markup.wrap"></span>
+            <b>Document Name:</b><br>
+            <input type="text" ng-model="name.documentTitle"></input><br>
+            <b>Master Font:</b><br>
+            <input type="text" ng-model="masterFont.set"></input><a target="_blank" class="post-model-prebutton fa fa-2x fa-question" href="https://www.google.com/fonts"></a>
+            <hr>
         </div>
+        <constructable-model></constructable-model>
     </div>
 </div>
 
 <div class="post-preview-wrapper">
-    <h1 class="preview-title" ng-class="{'preview-title-margin': name.length >= 1}">
+    <h1 class="preview-title" ng-class="{'preview-title-margin': name.documentTitle.length >= 1}">
         Preview
     </h1>
     <p class="doc-name">{{name.documentTitle}}</p>
-    <div id="preview" class="post-preview">
-        <div ng-repeat="each in document track by each.id">
-            <span bind-to="document[$index].markup.display"></span>
-        </div>
-    </div>
+    <constructable-view ng-style="{'font-family': masterFont.set}"></constructable-view>
 </div>

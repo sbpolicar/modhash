@@ -1,38 +1,33 @@
-
 html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
 }
-
 body {
     margin: 0;
     padding: 0;
     width: 100vw;
     height: 100vh;
     font-family: 'Titillium Web', sans-serif;
+    overflow: hidden;
     font-weight: 300;
     overflow-x: hidden;
 }
-
-p, ul, t {
+p, ul, t, li {
+    list-style: none;
     padding: 0;
     margin: 0;
     font-family: 'Titillium Web', sans-serif;
 }
-
-/* input styling */
-
 input, textarea {
     font-size: 20px;
     border: solid rgba(150,150,150,0.25) 0.5px;
     border-radius: 5px;
-    width: 80%;
+    width: 75%;
     margin: 15px;
-    margin-top: 5px;
+    margin-top: 15px;
 }
-
 input:focus, textarea:focus, input:hover, textarea:hover {
     -webkit-transition: .5s;
     -o-transition: .5s;
@@ -42,7 +37,6 @@ input:focus, textarea:focus, input:hover, textarea:hover {
     border: solid rgba(0,0,0,0.3) 1px;
     border-radius: 0;
 }
-
 textarea {
     height: 250px;
 }
@@ -52,8 +46,6 @@ h3 {
 .my-face {
     border-radius: 50%;
 }
-/* end input styling */
-/* Begin Nav/Layout.ejs Styling*/
 .nav {
     -webkit-transition: .5s;
     -o-transition: .5s;
@@ -66,18 +58,14 @@ h3 {
     border-bottom: solid black 0.3px;
     display: block;
     margin: 0;
-    /*box-shadow: 0 0 50px 0 rgba(0,0,0,0.2);*/
 }
-
 .nav-content {
     padding: 20px;
     height: auto;
 }
-
 .nav-title {
     text-align: left;
 }
-
 .title-bracket {
     color: rgba(161,255,0,1);
     text-shadow:
@@ -86,20 +74,16 @@ h3 {
     -.5px .5px 0 #000,
     .5px .5px 0 #000;
 }
-
 .title-hash {
     color: rgba(255,161,0,1);
 }
-
 .nav-title > p {
     display: inline-block;
 }
-
 .nav-links {
     text-align: right;
     margin-top: -50px;
 }
-
 .nav-links > span > a > i {
     -webkit-transition: .3s;
     -o-transition: .3s;
@@ -111,12 +95,10 @@ h3 {
     -.5px .5px 0 #000,
     .5px .5px 0 #000;
 }
-
 .nav-links > span > a > i:hover {
     color: rgba(255,161,0,1);
     text-shadow: 0 0 10px white;
 }
-
 .side-nav {
     background-color: white;
     font-size: 2em;
@@ -127,8 +109,6 @@ h3 {
     right: 0;
     top: 88px;
     border-left: solid black 0.3px;
-    /*box-shadow: 0 0 50px 0 rgba(0,0,0,0.2);*/
-    /*background-color: black;*/
     list-style-type: none;
     z-index: 1;
     color: white;
@@ -150,25 +130,24 @@ ul.side-nav > li > a:hover {
 ul.ng-leave {
     animation: fadeOutRight .3s;
 }
-
 .nav-switch {
     color: white !important;
     background-color: black !important;
 }
-
+.close {
+    color: red;
+}
 .flash {
-    animation:fadeIn .5s;
+    z-index: 1;
+    box-shadow: inset 0px 10px 25px rgba(0,0,0,0.45);
+    position: fixed;
+    margin-left: -50%;
+    animation: fadeIn .5s;
     font-size: 1.5vw;
-    text-shadow:
-    -.5px -.5px 0 #000,
-    .5px -.5px 0 #000,
-    -.5px .5px 0 #000,
-    .5px .5px 0 #000;
-    /*transition: 1s;*/
+    opacity: 0.75;
     text-align: center;
     background-color: rgba(255,80,0,1);
-    width: 100%;
-    border-radius: 0 0 50px 50px;
+    width: 200%;
     color: white;
 }
 .flash.ng-enter {
@@ -177,61 +156,94 @@ ul.ng-leave {
 .flash.ng-leave {
     animation:fadeOut .5s;
 }
-/* End Nav/Layout Styling */
-
 .view-container {
+    background-color: rgba(255,255,255,0.95);
     height: 120vh;
     padding: 20px;
 }
-
-/* Home view styling*/
 .home-container {
     text-align: center;
-}
-
-.home-title {
-    font-size: 500%;
-    margin: 0;
-}
-
-.home-title-logo {
-    border-radius: 1.5pc;
-    display: inline;
-    background-color: black;
-    color: white;
-    -webkit-transition: .7s;
-    -o-transition: .7s;
-    transition: .7s;
-}
-.home-title-logo:hover {
-    border-radius: 0;
-    display: inline;
-    background-color: white;
-    color: black !important;
-}
-.home-title:hover * {
-    color: black !important;
-}
-
-.home-question {
     animation: bounceInDown .7s;
+}
+.home-title {
+    font-size: 8vw;
+    margin: 0;
     cursor: pointer;
 }
-.question-focused {
-     -webkit-transition: .5s;
+.title-colon {
+    text-shadow:
+    -.5px -.5px 0 #000,
+    .5px -.5px 0 #000,
+    -.5px .5px 0 #000,
+    .5px .5px 0 #000;
+}
+.g-recaptcha > div > div{
+   margin: 15px auto !important;
+   text-align: center;
+   width: auto !important;
+   height: auto !important;
+}
+.home-info {
+    width: 50%;
+    min-width: 301px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.home-info-title {
+    font-size: 2.8vw;
+    margin: 0;
+    padding-top:25px;
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+.home-info-text{
+    padding: 20px;
+    font-size: 1.5vw;
+}
+.home-form {
+    min-width: 301px;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 0 0 25px 25px;
+}
+.home-form-title {
+    margin: 0;
+    font-size: 2.8vw;
+    padding-top:25px;
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+.home-form-input {
+    width: 25%;
+}
+.home-form-submit{
+    background-color: rgba(161,255,0,1);
+    color: black;
+    width: 25%;
+    font-family: 'Titillium Web', sans-serif;
+}
+.home-form-submit:focus, .home-form-submit:hover:focus {
+    background-color: white;
+    color: black;
+    font-weight: 400;
+}
+.home-form-submit:hover {
+    font-weight: 400;
+    background-color: black;
+    color: rgba(255,161,0,1);
+}
+.shadow-box {
+    background-color: white;
+    min-width: 300;
+    -webkit-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
-    padding: 5px;
-    box-shadow: 10px 10px 25px rgba(0,0,0,0.45);
-    border: solid rgba(0,0,0,0.3) 1px;
-    border-radius: 0;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.45);
 }
-.home-answer {
-    animation: fadeInUp .5s;
-}
-/* end home styling */
 
-/* Post stying */
+
 
 .post {
     display: inline-block;
@@ -240,37 +252,103 @@ ul.ng-leave {
 }
 
 .post-model {
+    overflow: auto;
+    height: 86.5vh;
     float: right;
     padding-bottom: 20px;
-    /*width: 49%;*/
 }
-
+.post-model-button {
+    float: right;
+    text-decoration: none;
+    color: rgba(161,255,0,1);
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: black;
+    transition: all .5s;
+    font-size: 1.25vw;
+    font-weight: 900;
+}
+.post-model-prebutton {
+    text-decoration: none;
+    color: rgba(161,255,0,1);
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: black;
+    transition: all .5s;
+    font-size: 1.25vw;
+    font-weight: 900;
+}
+.post-model-button:nth-child(4):hover:after {
+    font-family: 'Titillium Web', sans-serif;
+    content: " CLONE";
+    color: white;
+}
+.post-model-button:nth-child(3):hover:after {
+    font-family: 'Titillium Web', sans-serif;
+    content: " CLEAR";
+    color: white;
+}
+.post-model-button:nth-child(2):hover:after {
+    font-family: 'Titillium Web', sans-serif;
+    content: " SETTINGS";
+    color: white;
+}
+.post-model-button:nth-child(1):hover:after {
+    font-family: 'Titillium Web', sans-serif;
+    content: " DELETE";
+    color: red;
+}
+.post-model-repeat-settings {
+    padding: 10px;
+    border: solid rgba(0,0,0,0.5) 1px;
+    border-radius: 5px;
+    background-color: rgba(150,150,150,0.5);
+    color: white;
+}
+.settings-title {
+    border-bottom: solid black 1px;
+}
+.post-model-repeat-settings > label > input {
+    width: 35%;
+}
+.post-model-repeat-settings.ng-enter {
+    animation: fadeIn 0.5s;
+}
+.post-model-repeat-settings.ng-leave {
+    animation: fadeOut 0.5s;
+}
 .post-model-wrapper {
-    /*margin: 0 auto;*/
+    margin: 0 auto;
+    margin-top: 85px;
+    overflow: auto;
     width: 82%;
 }
 .post-preview-wrapper {
     position: fixed;
     width: 49%;
-    overflow: hidden;
     content:"";
     display:block;
     clear:both;
 }
 .post-preview {
-    margin: 0 auto;
-    padding: 10px;
-    float: left;
-    word-wrap: break-word;
     overflow: auto;
-    border: inset rgba(150,150,150,0.1) 0.5px;
-    max-height: 76vh;
-    height: 100%;
-    width: 94%;
+    margin: 0 auto;
+    padding: 20px;
+    word-wrap: break-word;
+    background-color: white;
+    border: solid rgba(150,150,150,0.5) 1px;
+    height: 75vh;
+    width: 90%;
 }
 .preview-title {
-    border-bottom: solid rgba(150,150,150,0.5) 1px;
+    border: solid rgba(150,150,150,0.5) 1px;
+    border-top: none;
     margin-top: 0;
+    background-color: white;
+    padding: 20px;
+    padding-bottom: 0;
 }
 .preview-title-margin {
     margin: 1px;
@@ -278,23 +356,28 @@ ul.ng-leave {
 .post-input {
     display: block;
 }
-
 .post-model > h3 {
     margin: 0;
     padding: 0;
 }
 .post-model-repeat {
-    margin: 0 auto;
+    width: 100%;
+}
+.post-model-prerepeat {
+    margin-top: 90px;
 }
 .post-model-repeat.ng-enter {
     animation: fadeInUp .5s;
 }
+
 .post-model-repeat.ng-leave {
     animation: fadeOut .5s;
 }
+.repeat-options {
+    display: block;
+}
 .post-add-input-button {
     z-index: 1;
-    /*margin-top: 10px;*/
     float: right;
     color: rgba(161,255,0,1);
     text-shadow:
@@ -306,48 +389,37 @@ ul.ng-leave {
     -o-transition: .5s;
     transition: .5s;
     cursor: pointer;
-
 }
-.post-delete-input-button {
-    cursor: pointer;
-    margin-top: 10px;
-    float: right;
-    color: rgba(255,80,0,1);
-    text-shadow:
-    -.5px -.5px 0 #000,
-    .5px -.5px 0 #000,
-    -.5px .5px 0 #000,
-    .5px .5px 0 #000;
-    -webkit-transition: .5s;
-    -o-transition: .5s;
-    transition: .5s;
-}
-
 .post-model-title {
+    border: solid rgba(150,150,150,0.5) 1px;
+    border-top: none;
     background-color: white;
     position: fixed;
+    padding: 20px;
+    padding-bottom: 0;
     margin: 0;
     margin-bottom: 10px;
-    border-bottom: solid rgba(150,150,150,0.5) 1px;
     width: 42%;
 }
 .input-select {
-    font-size: 1.8vw;
+    font-size: 1.5vw;
     position: absolute;
     background-color: black;
     padding: 10px;
     border-radius: 20px;
-    width: 50%;
+    width: 100%;
     box-shadow: 10px 10px 25px rgba(0,0,0,0.45);
 }
 .input-select.ng-enter {
-    animation: fadeInRight .5s;
+    animation: slideInRight .5s;
 }
 .input-select.ng-leave {
-    animation: fadeOutRight .5s;
+    animation: slideOutRight .5s;
 }
 .input-select > li {
+    color: white;
     list-style-type: none;
+    font-weight: 300;
     font-size: 1.5vw
 }
 .input-select > li:hover {
@@ -356,27 +428,25 @@ ul.ng-leave {
 }
 .input-select > li:nth-child(-n+7):hover:before{
     content:"+ ";
-    color: white;
+    color: rgba(161,255,0,1);
 }
 .input-select > li:nth-child(10):hover:before{
     font-family: FontAwesome;
     content:"\f0c7 \ ";
-    color: white;
+    color: rgba(161,255,0,1);
 }
 .input-select > li:nth-child(11):hover:before{
     font-family: FontAwesome;
     content:"\f12d \ ";
-    color: white;
+    color: rgba(161,255,0,1);
 }
 .input-select > li:nth-child(12):hover:before{
     font-family: FontAwesome;
     content:"\f1f8 \ ";
-    color: white;
+    color: rgba(161,255,0,1);
 }
-
-
 .input-select > label {
-    font-size: 1.8vw;
+    font-size: 1.5vw;
     color: white;
 }
 .center {
@@ -385,7 +455,8 @@ ul.ng-leave {
 }
 button {
     transition: .5s;
-    background-color: white;
+    background-color: transparent;
+    cursor: pointer;
     font-family: 'Titillium Web', sans-serif;
     color: black;
     border: none;
@@ -404,7 +475,7 @@ button {
 }
 .alignment {
     transition: .8s;
-    border-radius: 25px;
+    border-radius: 15px;
     background-color: black;
     color: rgba(161,255,0,1);
 }
@@ -414,12 +485,10 @@ button {
  width: auto;
 }
 pre.preview-item.paragraph {
-    /*word-wrap: break-word;*/
-    /*word-break: break-all;*/
     white-space: pre-wrap;
     font-family: 'Titillium Web', sans-serif;
     font-weight: 300;
-    width: 88%;
+    width: 100%;
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -427,4 +496,3 @@ pre.preview-item.paragraph {
 .doc-name {
     color: rgba(150,150,150,0.75);
 }
-/* end Post stying */

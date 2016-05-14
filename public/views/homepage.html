@@ -1,0 +1,28 @@
+<br>
+<div class="home-container">
+    <h1 class="home-title">
+        <span ng-class="{'title-bracket':navSwitch===true}">{ </span>Construct<span ng-class="{'title-hash':navSwitch===true}" class="title-colon">:</span>able<span ng-class="{'title-bracket':navSwitch===true}"> }</span>
+    </h1>
+    <div class="shadow-box home-info">
+        <h1 class="home-info-title">What is Constructable?</h1>
+        <p class="home-info-text">
+            Constructable is a web application that allows anyone to sign up and quickly build, format, display, and share their own HTML page.
+            <br>
+            A live preview makes construction and formatting simple and fast.
+            <br>Try it out:
+        </p>
+
+
+
+    </div>
+    <!-- form start -->
+    <form novalidate class="shadow-box home-form">
+        <h1 class="home-form-title">Sign up for Constructable</h1>
+        <br>
+        <label>Email:</label>
+        <input ng-model="user.email" class="home-form-input"></input>
+        <div class="g-recaptcha" data-sitekey="6LfNsh8TAAAAADFcKYZ2tRSQ6OSA5r9ZMNqcatSz"></div>
+        <input class="home-form-submit" type="submit" ng-click="signUp(user)" value="Save" />
+    </form>
+    <!-- form end -->
+</div>
