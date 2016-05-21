@@ -3,15 +3,17 @@
 </div>
 <div class="post post-model">
         <h1 class="post-model-title">Build your document
-            <span class="post-add-input-button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i ng-click="selectInputType(true)" ng-if="!toggleSelectInput" class="fa fa-bars"></i><i ng-click="selectInputType(false)" ng-if="toggleSelectInput" class="fa fa-times close"></i>&nbsp;
+            <span class="post-add-input-button"><i ng-click="selectInputType(true)" ng-if="!toggleSelectInput" class="fa fa-bars"></i><i ng-click="selectInputType(false)" ng-if="toggleSelectInput" class="fa fa-times close"></i>&nbsp;
                 <ul class="input-select" ng-if="toggleSelectInput">
                 { <label class="add-input-label">Add</label> }
                     <li ng-click="addInput('title')">Title</li>
                     <li ng-click="addInput('subtitle')">Subtitle</li>
+                    <li ng-click="addInput('list')">List Item</li>
                     <li ng-click="addInput('paragraph')">Paragraph</li>
-                    <li ng-click="addInput('code')">Code</li>
+                    <li ng-click="addInput('break')">Break</li>
                     <li ng-click="addInput('link')">Link</li>
                     <li ng-click="addInput('image')">Image</li>
+                    <li ng-click="addInput('code')">Code</li>
                 <hr>
                 { <label class="add-input-label">Options</label> }
                     <li ng-click="saveDocument()">Save</li>
@@ -22,7 +24,6 @@
         </h1>
     <div class="post-model-wrapper">
         <div class="post-model-prerepeat">
-        <br><br><br>
             <b>Document Name:</b><br>
             <input type="text" ng-model="name.documentTitle"></input><br>
             <b>Master Font:</b><br>

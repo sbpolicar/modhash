@@ -5,7 +5,9 @@ Constructable.service('BuildService', function(HexService){
         this.color = "black";
         this.fontFamily = "inherit";
         this.fontSize = 'inital';
-        this.style = "{'font-family':document[$index].fontFamily,'font-size':document[$index].fontSize,'text-align':document[$index].alignment,'color':document[$index].color}";
+        this.width = '100%';
+        this.place ="left";
+        this.style = "{'font-family':document[$index].fontFamily,'font-size':document[$index].fontSize,'text-align':document[$index].alignment,'color':document[$index].color,'width':document[$index].width, 'float':document[$index].place}";
     }
 
     function Title() {
@@ -42,6 +44,7 @@ Constructable.service('BuildService', function(HexService){
     }
 
     function Image() {
+        that = new ConstructableObj();
         that.type = "Image";
         that.markup = {
             input:"",
@@ -70,8 +73,30 @@ Constructable.service('BuildService', function(HexService){
         that.type = "Code";
         that.markup = {
             input:"",
-            display: '<pre class="preview-item code" ng-bind-html="document[$index].markup.input" ng-style="{{document[$index].style}}"></pre>',
+            display: '<pre class="preview-item code" ng-style="{{document[$index].style}}">{{document[$index].markup.input}}</pre>',
             wrap: '<textarea ng-model="document[$index].markup.input"></textarea>'
+        };
+        return that;
+    }
+
+    function Break() {
+        that = new ConstructableObj();
+        that.type = "Break";
+        that.markup = {
+            input:"",
+            display: '<br><br>',
+            wrap: '<p>Line Break</p>'
+        };
+        return that;
+    }
+
+    function List() {
+        that = new ConstructableObj();
+        that.type = "List";
+        that.markup = {
+            input:"",
+            display: '<ul><li ng-style="{{document[$index].style}}">{{document[$index].markup.input}}</li></ul>',
+            wrap: '<input ng-model="document[$index].markup.input"></input>'
         };
         return that;
     }
@@ -82,6 +107,8 @@ Constructable.service('BuildService', function(HexService){
         paragraph: Paragraph,
         image: Image,
         link: Link,
-        code: Code
+        code: Code,
+        break: Break,
+        list: List
     }
 });

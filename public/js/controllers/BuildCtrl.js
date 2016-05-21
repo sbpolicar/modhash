@@ -133,8 +133,13 @@ Constructable.controller('BuildCtrl',
             case 'code':
                 $scope.document.push( new BuildService.code() )
                 break;
+            case 'break':
+                $scope.document.push( new BuildService.break() )
+                break;
+            case 'list':
+                $scope.document.push( new BuildService.list() )
+                break;
         }
-        window.scrollTo(0,document.body.scrollHeight);
     }
 
     window.onbeforeunload = function() {

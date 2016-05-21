@@ -5,14 +5,13 @@
             <a ng-click="showSettings=!showSettings" class="post-model-button fa-cog fa fa-2x"></a>
             <a ng-click="clearItem($index)" class="post-model-button fa fa-2x fa-eraser"></a>
             <a ng-click="cloneItem(document[$index].type)" class="post-model-button fa fa-2x fa-copy"></a>
-        </b>
         <br>
         <span bind-to="document[$index].markup.wrap"></span>
     </div>
     <div ng-if="showSettings" class="post-model-repeat-settings">
     <h3 class="center settings-title">Settings</h3>
         <br>
-        <b>Alignment:</b>&nbsp;
+        <label ng-hide="document[$index].type === 'Break'"><b>Alignment:</b>&nbsp;
         <button ng-class="{'alignment': document[$index].alignment === 'left'}" ng-click="document[$index].alignment ='left'">
             Left
         </button>
@@ -22,11 +21,12 @@
         <button ng-class="{'alignment': document[$index].alignment === 'right'}" ng-click="document[$index].alignment ='right'">
             Right
         </button>
+        </label>
         <br>
-        <label><b>Color:</b>
+        <label ng-hide="document[$index].type === 'Break'"><b>Color:</b>
         <input ng-style="{'color': document[$index].color}" ng-model="document[$index].color"></input><br>
         </label>
-        <label><b>Font Size:</b>
+        <label><b>Size:</b>
         <select ng-model="document[$index].fontSize">
             <option value="12pt">12</option>
             <option value="14px">14</option>
@@ -43,8 +43,21 @@
         </select>
         <br>
         </label>
-        <label><b>Font:</b>
+        <label ng-if="document[$index].type !== 'Break'"><b>Font:</b>
         <input ng-model="document[$index].fontFamily"></input>
+        </label>
+        <label ng-if="document[$index].type !== 'Break'"><b>Width:</b>
+            <select ng-model="document[$index].width">
+            <option value="33%">3</option>
+            <option value="50%">2</option>
+            <option value="100%">1</option>
+        </select>
+        </label>
+        <label ng-if="document[$index].type !== 'Break'"><b>Place:</b>
+            <select ng-model="document[$index].place">
+            <option value="left">Left</option>
+            <option value="right">Right</option>
+        </select>
         </label>
     </div>
     <hr>

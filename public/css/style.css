@@ -18,7 +18,7 @@ p, ul, t, li {
     list-style: none;
     padding: 0;
     margin: 0;
-    font-family: 'Titillium Web', sans-serif;
+    /*font-family: 'Titillium Web', sans-serif;*/
 }
 input, textarea {
     font-size: 20px;
@@ -27,6 +27,7 @@ input, textarea {
     width: 75%;
     margin: 15px;
     margin-top: 15px;
+    font-family: 'Lucida Grande';
 }
 input:focus, textarea:focus, input:hover, textarea:hover {
     -webkit-transition: .5s;
@@ -68,11 +69,7 @@ h3 {
 }
 .title-bracket {
     color: rgba(161,255,0,1);
-    text-shadow:
-    -.5px -.5px 0 #000,
-    .5px -.5px 0 #000,
-    -.5px .5px 0 #000,
-    .5px .5px 0 #000;
+
 }
 .title-hash {
     color: rgba(255,161,0,1);
@@ -89,11 +86,7 @@ h3 {
     -o-transition: .3s;
     transition: .3s;
     color: rgba(161,255,0,1);
-    text-shadow:
-    -.5px -.5px 0 #000,
-    .5px -.5px 0 #000,
-    -.5px .5px 0 #000,
-    .5px .5px 0 #000;
+
 }
 .nav-links > span > a > i:hover {
     color: rgba(255,161,0,1);
@@ -171,11 +164,7 @@ ul.ng-leave {
     cursor: pointer;
 }
 .title-colon {
-    text-shadow:
-    -.5px -.5px 0 #000,
-    .5px -.5px 0 #000,
-    -.5px .5px 0 #000,
-    .5px .5px 0 #000;
+
 }
 .g-recaptcha > div > div{
    margin: 15px auto !important;
@@ -253,7 +242,7 @@ ul.ng-leave {
 
 .post-model {
     overflow: auto;
-    height: 86.5vh;
+    height: 89.5vh;
     float: right;
     padding-bottom: 20px;
 }
@@ -312,6 +301,11 @@ ul.ng-leave {
 }
 .post-model-repeat-settings > label > input {
     width: 35%;
+    text-shadow:
+    -.5px -.5px 0 #000,
+    .5px -.5px 0 #000,
+    -.5px .5px 0 #000,
+    .5px .5px 0 #000;
 }
 .post-model-repeat-settings.ng-enter {
     animation: fadeIn 0.5s;
@@ -321,7 +315,6 @@ ul.ng-leave {
 }
 .post-model-wrapper {
     margin: 0 auto;
-    margin-top: 85px;
     overflow: auto;
     width: 82%;
 }
@@ -336,6 +329,7 @@ ul.ng-leave {
     overflow: auto;
     margin: 0 auto;
     padding: 20px;
+    display: block;
     word-wrap: break-word;
     background-color: white;
     border: solid rgba(150,150,150,0.5) 1px;
@@ -380,11 +374,7 @@ ul.ng-leave {
     z-index: 1;
     float: right;
     color: rgba(161,255,0,1);
-    text-shadow:
-    -.5px -.5px 0 #000,
-    .5px -.5px 0 #000,
-    -.5px .5px 0 #000,
-    .5px .5px 0 #000;
+
     -webkit-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
